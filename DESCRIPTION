@@ -1,18 +1,26 @@
 Package: ecotourism
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Data package containing tourism records and endangered wildlife reports
 Version: 0.1.0
 Authors@R: c(
     person(
-      "Jane", "Doe",
-      email = "jane@example.com",
+      "Harshitha", "Diddige",
+      email = "harshithadiddige24@gmail.com",
       role = c("aut", "cre")
     )
   )
-Description: More about what it does (maybe more than one line).
-    Continuation lines should be indented.
-License: What license is it under?
+Description: This project provides a data package designed for teaching. It can be used to teach data visualization techniques, including working with maps, temporal data, and creating basic plots. The package includes datasets related to ecotourism and endangered wildlife, which can be used to demonstrate various data analysis methods and visualization tools.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 URL: https://github.com/harshitha1201/ecotourism
 BugReports: https://github.com/harshitha1201/ecotourism/issues
+RoxygenNote: 7.3.2
+Imports: 
+    dplyr,
+    galah,
+    GSODR,
+    readr,
+    sf,
+    stringr,
+    tidyr
