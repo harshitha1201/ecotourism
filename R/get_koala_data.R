@@ -1,6 +1,33 @@
 library(galah)
 library(dplyr)
 
+#' Fetch Koala occurrence data from the Atlas of Living Australia (ALA)
+#'
+#' This function retrieves Koala (Phascolarctos cinereus) occurrence records from the ALA
+#' for the years 2023-2024, filtered by state and with quality controls. It joins the
+#' occurrence data with conservation status information for each state.
+#'
+#' @param user_email A string containing the user's email for configuring ALA data access
+#'
+#' @returns A tibble (data frame) containing Koala occurrence records with the following columns:
+#' \itemize{
+#'   \item eventDate: Date of observation (Date object)
+#'   \item decimalLatitude: Latitude in decimal degrees (numeric)
+#'   \item decimalLongitude: Longitude in decimal degrees (numeric)
+#'   \item individualCount: Number of individuals observed (integer)
+#'   \item stateProvince: Australian state where observation occurred (character)
+#'   \item habitat_type: Type of habitat (character, from ALA's cl1048 field)
+#'   \item status: Conservation status in the state (character)
+#'   \item source: Legislative source for conservation status (character)
+#'   \item assessment_year: Year of conservation status assessment (numeric)
+#' }
+#'
+#'
+#' @examples
+#' koala_data <- get_koala_data("your.email@example.com")
+#' head(koala_data)
+#'
+#'@export
 get_koala_data <- function(user_email) {
 
   galah_config(email = user_email)
