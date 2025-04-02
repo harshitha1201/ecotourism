@@ -1,6 +1,12 @@
 library(galah)
 library(dplyr)
 
+# Declare global variables to avoid NOTE in `R CMD check`
+utils::globalVariables(c(
+  "year", "basisOfRecord", "stateProvince", "decimalLatitude",
+  "decimalLongitude", "eventDate", "individualCount", "cl1048"
+))
+
 #' Fetch Koala occurrence data from the Atlas of Living Australia (ALA)
 #'
 #' This function retrieves Koala (Phascolarctos cinereus) occurrence records from the ALA
@@ -22,12 +28,13 @@ library(dplyr)
 #'   \item assessment_year: Year of conservation status assessment (numeric)
 #' }
 #'
-#'
 #' @examples
-#' koala_data <- get_koala_data("your.email@example.com")
+#' koala_data <- get_koala_data("harshithadiddige24@gmail.com")
 #' head(koala_data)
 #'
-#'@export
+#' @importFrom galah galah_config galah_call galah_identify galah_filter galah_select atlas_occurrences
+#' @importFrom dplyr rename mutate filter left_join %>%
+#' @export
 get_koala_data <- function(user_email) {
 
   galah_config(email = user_email)
@@ -63,4 +70,3 @@ get_koala_data <- function(user_email) {
 
   return(koala_data)
 }
-

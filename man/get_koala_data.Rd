@@ -29,7 +29,7 @@ for the years 2023-2024, filtered by state and with quality controls. It joins t
 occurrence data with conservation status information for each state.
 }
 \examples{
-koala_data <- get_koala_data("your.email@example.com")
+koala_data <- get_koala_data("harshithadiddige24@gmail.com")
 head(koala_data)
 
 }
