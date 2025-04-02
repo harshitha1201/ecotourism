@@ -1,5 +1,5 @@
-library(galah)
-library(dplyr)
+#library(galah)
+#library(dplyr)
 
 # Declare global variables to avoid NOTE in `R CMD check`
 utils::globalVariables(c(
