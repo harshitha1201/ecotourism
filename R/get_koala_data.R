@@ -18,14 +18,14 @@ utils::globalVariables(c(
 #' @returns A tibble (data frame) containing Koala occurrence records with the following columns:
 #' \itemize{
 #'   \item eventDate: Date of observation (Date object)
-#'   \item decimalLatitude: Latitude in decimal degrees (numeric)
-#'   \item decimalLongitude: Longitude in decimal degrees (numeric)
-#'   \item individualCount: Number of individuals observed (integer)
+#'   \item decimalLatitude: Latitude in decimal degrees (numeric, double)
+#'   \item decimalLongitude: Longitude in decimal degrees (numeric, double)
+#'   \item individualCount: Number of individuals observed (numeric, double; may contain NA values)
 #'   \item stateProvince: Australian state where observation occurred (character)
 #'   \item habitat_type: Type of habitat (character, from ALA's cl1048 field)
 #'   \item status: Conservation status in the state (character)
 #'   \item source: Legislative source for conservation status (character)
-#'   \item assessment_year: Year of conservation status assessment (numeric)
+#'   \item assessment_year: Year of conservation status assessment (numeric, double)
 #' }
 #'
 #' @examples
