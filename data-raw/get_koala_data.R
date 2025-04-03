@@ -51,6 +51,3 @@ koala_data <- koala_data |>
 
 # Save the koala_data DataFrame to a CSV file
 write_csv(koala_data, here::here("inst", "extdata", "koala_data.csv"))
-
-
-
