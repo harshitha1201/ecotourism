@@ -18,4 +18,7 @@ BugReports: https://github.com/harshitha1201/ecotourism/issues
 RoxygenNote: 7.3.2
 Imports: 
     dplyr,
-    galah
+    galah,
+    readr
+Depends: 
+    R (>= 3.5)
