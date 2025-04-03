@@ -1,0 +1,59 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+# ecotourism <a href='https://github.com/harshitha1201/ecotourism'><img src='man/figures/logo.png' align="right" height="120" /></a>
+
+## Overview 
+
+ecotourism is an R package for retrieving and analyzing wildlife occurrence data, currently focused on Koala records from the Atlas of Living Australia. Future updates will include more species, tourism data, and weather insights.
+
+## Installation
+
+You can install the development version of **ecotourism** from [GitHub](https://github.com/) with:
+
+```r
+
+install.packages("remotes")
+remotes::install_github("harshitha1201/ecotourism")
+```
+
+## Example
+
+```{r}
+library(dplyr)
+library(galah)
+
+koala_data <- read.csv("inst/extdata/koala_data.csv")
+head(koala_data)
+```
+
+```{r}
+library(ggplot2)
+library(rnaturalearth)
+
+australia_map <- ne_states(country = "Australia", returnclass = "sf")
+
+ggplot() +
+  geom_sf(data = australia_map, fill = "white", color = "black") +
+  geom_point(data = koala_data, aes(x = decimalLongitude, y = decimalLatitude, color = stateProvince), alpha = 0.6) +
+  geom_sf_text(data = australia_map, aes(label = name), size = 3, check_overlap = TRUE) +
+  labs(title = "Geographical Distribution of Koala Observations",
+       x = "Longitude",
+       y = "Latitude") +
+  theme_minimal()
+```
