@@ -1,3 +1,4 @@
+Developed an R package for ecotourism data analysis, inspired by real-world [ecotourism](https://github.com/vahdatjavad/ecotourism/) research use cases, integrating biodiversity and tourism datasets with geospatial visualization and reproducible workflows.
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 <!-- badges: start -->
